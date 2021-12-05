@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&display=swap');
+.background{
+    width: 100%;
+    height: 120%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../images/static/tan-bg-texture.jpg") no-repeat 50% 50% / cover;
+    opacity: 0.65;
+    z-index: -1;
+}
+
+.main{
+    width: 70%;
+    height: 70vh;
+    background: url("../images/static/background.jpg") no-repeat 100% 100% / cover;
+    opacity: 0.65;
+    margin: auto auto;
+    padding: 3rem;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.content{
+    width: 50%;
+    margin-left: 2rem;
+    font-weight: larger;
+}
+.content h1{
+    text-align: center;
+}
+span{
+    font-size: 7rem;
+    font-family: 'Ephesis', cursive;
+}
+.login{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    margin: auto;
+}
+.login a{
+    position: relative;
+    left: 35px;
+    height: 3.5rem;
+}

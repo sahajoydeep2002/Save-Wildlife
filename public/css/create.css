@@ -1,0 +1,75 @@
+.cover{
+    margin: auto;
+    width:1215.35px ;
+    height: 455.75px;
+    background: linear-gradient(white , grey);
+}
+.cover input{
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.display-picture input{
+    z-index: 1;
+    background-color: white;
+    position: absolute;
+    top: 480px;
+    left: 152px;
+    margin: 0 15px 0 2rem;
+    padding: 2rem;
+}
+#dp{
+    width: 180px;
+    height: 180px;
+    border-radius: 20rem;
+}
+h6{
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+input[type=text]{
+    margin: 0;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1.2rem;
+}
+.icon_click{
+    cursor: pointer;
+}
+input:focus{
+    outline: none;
+}
+input::placeholder{
+    font-size: 1.2rem;
+}
+#v-story{
+    width: 100%;
+    border: 2px solid black;
+    padding: 1rem;
+}
+input[type=file]{
+    border: 2px solid black;
+}
+.links{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.link{
+    padding: 0.4rem 1rem!important;
+    margin: 1rem 0 !important;
+}
+.link:focus{
+    outline: none !important;
+    box-shadow: 0;
+}
+.visit{
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+.submit{
+    text-align: center;
+}

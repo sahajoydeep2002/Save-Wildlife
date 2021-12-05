@@ -1,0 +1,24 @@
+.navbar{
+    box-shadow: 1px 1px 6px 0px grey;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+.navbar-nav{
+    margin-left: auto;
+}
+.navbar-brand img{
+    width: 67px;
+    height: 67px;
+}
+.fas{
+    padding: 0.6rem ;
+    font-size: 1.5rem ;
+    margin: 0 15px;
+    background-color: rgb(231, 228, 228);
+    border-radius: 20rem;
+}
+.d-flex{
+    align-items: center;
+}

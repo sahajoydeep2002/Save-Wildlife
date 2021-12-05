@@ -1,0 +1,117 @@
+body{
+    background-color: #f2f3f5;
+}
+.wrapper{
+    display: flex;
+    flex-direction: row;
+}
+
+/* SIDENAV */
+.sidenav{
+    width: 17%;
+    height: 90vh;
+    position: sticky;
+    top:85px;
+    left : 0;
+    border-right: 1px solid rgb(212, 210, 210);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sidenav_top{
+    margin-top: 1rem;
+}  
+.sidenav__links{
+    padding: 0.6rem 0.8rem;
+}
+hr{
+    margin-bottom: 0;
+}
+.img__icon{
+    height: 43.2px;
+    width: 40.2px;
+}
+.sidenav___icon{
+    margin-left: 0;
+}
+.sidenav__links a{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+}
+.sidenav__links button{
+    width: 100%;
+    border: 0;
+    background-color: #f2f3f5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    padding: 0;
+}
+
+.sidenav__links:hover{
+    background-color: rgb(216, 214, 214);
+}
+.sidenav__links button:hover{
+    background-color: rgb(216, 214, 214);
+}
+.sidenav__links p {
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
+/* MAIN */
+.main{
+    width: 66%;
+
+}
+
+/*MORE ANIMALS*/
+.more-animals{
+    width: 17%;
+    position: fixed;
+    top:100px;
+    right : 0;
+}
+#right-links{
+    text-decoration: none;
+    color: black;
+}
+.modal-body{
+    padding: 0;
+}
+.dp-in-modal img{
+    width: 60%;
+    height: 60%;
+    margin-bottom: 0px !important;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+textarea{
+    padding: 1rem;
+    border-top: 0 ;
+    border-left: 0;
+    border-right: 0;
+    margin:0 1rem;
+    border-bottom: 2px solid black;
+}
+input{
+    width: 29rem !important;
+    margin: 1rem;
+    border-bottom: 2px solid black;
+}
+
+.hash{
+    margin-bottom: 0%;
+    color: rgb(46, 46, 214);
+}
+.w-100-post{
+    height: 29rem;
+}

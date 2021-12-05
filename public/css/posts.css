@@ -1,0 +1,137 @@
+.add-post{
+    width: 85%;
+    background: white;
+    margin: auto;
+    margin-top: 3rem;
+    padding: 1rem;
+    border-radius: 6px;
+}
+.add-post_text{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.add-post_text img{
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+.add-post_text button{
+    text-align: left !important;
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    color: black;
+    background-color: #f0f2f5;
+    box-shadow : none;
+    line-height: 0;
+    border: 0 !important;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.add-post_text button:hover{
+    background-color: #dcdfe2;
+    color: black;
+}
+.icon{
+    padding:3px 30px;
+    margin-top: 10px;
+    display: flex;
+}
+.icon:hover{
+    background: #f2f3f5;
+    cursor: pointer;
+}
+.add-post__p{
+    margin-bottom: 0;
+}
+.add-post__icon{
+    background-color: white;
+    font-size: 1.2rem;
+    margin: 5px;
+    padding: 0;
+}
+#read_more , #read_less{
+    color: gray;
+}
+#read_more::before , #read_less::before{
+    content : '...'
+}
+
+
+
+
+/* POST */
+.story-post{
+    margin: 3rem auto;
+    width: 85%;
+    background-color: white;
+    border-radius: 6px;
+}
+.display-pic{
+    display: flex;
+    align-items: center;
+}
+.display-pic img{
+    cursor:pointer;
+    width: 80px;
+    height: 80px;
+    border-radius: 50rem;
+    margin: 1rem 0.6rem 1rem 1rem;
+    padding: 2px;
+    border: 2px solid rgb(54, 54, 212);
+}
+.post-text{
+    margin: 0 1rem 1rem 1rem;
+}
+.post-image{
+    padding: 1rem;
+}
+.carousel-item img{
+    width: 100%;
+}
+.hide{
+    display: none;
+}
+#hashtags p {
+    color: rgb(58, 58, 233);
+    margin-bottom: 0;
+}
+h4 a{
+    color: black;
+    text-decoration: none;
+}
+h4 a:hover{
+    text-decoration: underline;
+    color: black;
+}
+
+
+/* MORE ANIMALS */
+.animal-icon a{
+    display: flex;
+    align-items: center;
+}
+.animal-icon:hover{
+    background: rgb(216, 214, 214);
+    cursor: pointer;
+}
+.animal-icon img{
+    margin: 10px 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 20rem;
+    padding: 1px;
+    border: 2px solid rgb(59, 59, 233);
+}
+.animal-icon p{
+    font-size: 1rem;
+    margin-bottom: 0;
+    font-weight: 600 ;
+}
