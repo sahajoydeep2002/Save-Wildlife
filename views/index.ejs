@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1bc36632b3.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/navbar__global.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/posts.css">
+    
+    
+    <title>WildPrism</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="../images/static/logo.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+            </a>
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search Wildhacks" aria-label="Search">
+                <i class="fas fa-search"></i>
+            </form>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/dashboard"><i class="fas fa-home"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/bio/<%= user.animalId %> "><i class="fas fa-user-tie"></i></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"><i class="fas fa-bars"></i></a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+    </nav>
+
+    <!-- MODAL -->
+    <% if (user.hasAnimal) { %>
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Create Post</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form action="/post" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="display-pic dp-in-modal">
+                            <img src="../uploads/photos/<%= animal.dp %>" alt="">
+                            <div class="name">
+                                <h4> <%= animal.name %> </h4>
+                                <!-- <p> Yesterday, 4:00 PM </p> -->
+                            </div>
+                        </div>
+    
+                        <hr>
+                        <div class="inputs">
+                            <input type="hidden" name="name" value="<%= animal.name %>">
+                            <input type="hidden" name="dp" value="<%= animal.dp %>">
+                            <input type="hidden" name="animalId" value="<%= animal.id %>">
+                            <textarea name="post" id="post" cols="30" rows="3" placeholder="Write a Post"></textarea>
+                            <textarea name="hashtags" id="hashtags" cols="30" rows="3" placeholder="Hashtags"></textarea>
+                            <input type="file" name="galleryPost" class="form-control" id="gallery" accept="images/*" multiple>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Post</button>
+                    </div>
+                </form>
+              </div>
+            </div>
+        </div>
+    <% } %>
+
+
+    <!-- BODY -->
+    <div class="wrapper">
+        <div class="sidenav">
+            <div class="sidenav_top">
+                <div class="sidenav__links name">
+                    <a href=""> 
+                        <i class="sidenav___icon fas fa-user-tie"></i>
+                        <p><%= user.nickname %></p>
+                    </a>
+                </div>
+                <% if (user.hasAnimal) { %>
+                    <div class="sidenav__links animal">
+                        <a href="/bio/<%= user.animalId %>">
+                            <i class="sidenav___icon fas fa-user-tie"></i>
+                            <p>animal</p>
+                        </a>
+                    </div>
+                    <div class="sidenav__links post">
+                        <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            <i class="sidenav___icon fas fa-plus"></i>
+                            <p>Post</p>
+                        </button>
+                    </div>
+                <% } else {%>
+                    <div class="sidenav__links animal">
+                        <a href="/create">
+                            <i class="sidenav___icon fas fa-plus"></i>
+                            <!-- <i class="sidenav___icon fas fa-user-tie"></i> -->
+                            <p>Create Your Animal</p>
+                        </a>
+                    </div>
+                <% } %>
+            </div>
+            <div class="sidenav_bottom">
+                <hr>
+                <div class="sidenav__links logout">
+                    <a href="">
+                        <i class="sidenav___icon fas fa-sign-out-alt"></i>
+                        <p>logout</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- BODY -->
+        <div class="main">
+            <% if (user.hasAnimal) { %>
+                <div class="add-post" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <!-- only for those who have created an animal -->
+                    <div class="add-post_text">
+                        <img src="../images/tiger-logo.jpg" alt="">
+                        <button class="btn-secondary btn"> Create a post </button>
+                    </div>
+                    <hr>
+                    <div class="buttons">
+                        <div class="icon">
+                            <i class="add-post__icon fas fa-images"></i>
+                            <p class="add-post__p">Image/Video</p>
+                        </div>
+                        <div class="icon">
+                            <i class="add-post__icon fas fa-database"></i>
+                            <p class="add-post__p"> Story </p>
+                        </div>
+                        <div class="icon">
+                            <i class="add-post__icon fas fa-newspaper"></i>
+                            <p class="add-post__p"> News </p>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+            
+
+            <% post.forEach((element , index) => { %>
+                <div class="story-post">
+                    <div class="details">
+                        <div class="display-pic">
+                            <img src="../uploads/photos/<%= element.dp %>" alt="">
+                            <div class="name">
+                                <h4> <a href=""> <%= element.name %> </a></h4>
+                                <p> <%= element.Date %> </p>
+                            </div>
+                        </div>
+                        <div class="post-text">
+                            <p class="short"> <%= element.postShort %> 
+                                <a href="" id="read_more_<%= index %>" class="read_more">read more</a>
+                                <span id="long_<%= index %>" class="hide"> <%= element.postLong %> </span>
+                                <div id="hashtag_<%= index %>" class="hide">
+                                    <% element.hashtags.forEach(hash => { %>
+                                        <p class="hash"> <%= hash %> </p>
+                                    <% }) %>
+                                </div> 
+                                <a href="" id="read_less_<%= index %>" class="hide read_less">read less</a>
+                            </p>
+                        </div>
+                        <div class="post-image">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <% element.gallery.forEach((image , index) => { %>
+                                        <% if (index === 0) { %>
+                                            <div class="carousel-item active">
+                                        <% } else {%>
+                                            <div class="carousel-item">
+                                        <% } %>
+                                            <img src="../uploads/photos/<%= image %>" class="w-100-post" alt="">
+                                        </div>
+                                    <% }) %>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <% }) %>
+        </div>  
+
+        <div class="more-animals">
+            <% data.forEach(element => { %>
+                <div class="animal-icon <%= element.name %>">
+                    <a href="/bio/<%= element.id %>" id="right-links">
+                        <img src="../uploads/photos/<%= element.dp %>" alt="">
+                        <p> <%= element.name %> </p>
+                    </a>
+                </div>
+            <% }) %>
+        </div>
+
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+<script src="../javascript/hide.js"></script>
+</html>
